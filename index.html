@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolo Bespoke | Sovereign Digital Flagship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --emerald: #041611; --gold: #c5a059; --light-gold: #f9e29d; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--emerald); color: #e5e5e5; scroll-behavior: smooth; }
+        .serif-majestic { font-family: 'Cinzel', serif; }
+        .gold-shimmer {
+            background: linear-gradient(135deg, #c5a059 0%, #f9e29d 50%, #c5a059 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-size: 200% auto; animation: shimmer 5s linear infinite;
+        }
+        @keyframes shimmer { to { background-position: 200% center; } }
+        .royal-card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.1);
+            backdrop-filter: blur(10px); transition: all 0.4s ease;
+        }
+        .royal-card:hover { border-color: var(--gold); transform: translateY(-5px); background: rgba(197, 160, 89, 0.05); }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal.active { display: flex; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="p-6 md:p-8 flex justify-between items-center fixed w-full z-50 bg-[#041611]/90 backdrop-blur-md border-b border-white/5">
+        <div class="text-xl md:text-2xl serif-majestic font-bold tracking-[0.2em] gold-shimmer">BOLO BESPOKE</div>
+        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-medium">
+            <a href="#vault" class="hover:text-white transition">The Vault</a>
+            <a href="#gallery" class="hover:text-white transition">Gallery</a>
+            <button onclick="toggleModal('bookingModal')" class="bg-[#c5a059] text-[#041611] px-8 py-3 font-bold hover:bg-[#f9e29d] transition rounded-sm">Request Fit</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-20 relative overflow-hidden text-center">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/14149904265985243692_0" alt="Bespoke Suit" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 space-y-6 max-w-4xl bg-[#041611]/60 p-10 backdrop-blur-sm border border-white/5">
+            <h2 class="text-[10px] tracking-[0.8em] uppercase opacity-80">Est. Nairobi, Kenya</h2>
+            <h1 class="text-4xl md:text-7xl serif-majestic leading-tight">Designed for <br> <span class="gold-shimmer">The Sovereign.</span></h1>
+            <p class="text-xs md:text-sm font-light tracking-widest max-w-2xl mx-auto leading-loose opacity-90">
+                Crafting prestige for the global elite. Experience a digital concierge service that matches the precision of our tailoring.
+            </p>
+            <div class="pt-8 flex flex-col md:flex-row justify-center gap-4">
+                <button onclick="toggleModal('bookingModal')" class="bg-[#c5a059] text-[#041611] px-10 py-4 font-bold uppercase tracking-widest text-[10px] rounded-sm hover:scale-105 transition-transform">Book VVIP Consultation</button>
+                <a href="#gallery" class="border border-[#c5a059]/40 px-10 py-4 font-bold uppercase tracking-widest text-[10px] rounded-sm hover:border-[#c5a059] transition-all">View Lookbook</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="vault" class="py-24 px-6 md:px-24 bg-[#03110d]">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="royal-card p-10 space-y-6">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/15310863487944573036_0" class="w-full h-40 object-cover opacity-50 mb-4" alt="Tailoring">
+                <h3 class="text-lg serif-majestic gold-shimmer tracking-widest">The Vault</h3>
+                <p class="text-[11px] leading-relaxed opacity-60 uppercase tracking-tighter">Securely stored measurement profiles. Re-ordering perfection in one tap.</p>
+            </div>
+            <div class="royal-card p-10 space-y-6">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/9996763712465496907_0" class="w-full h-40 object-cover opacity-50 mb-4" alt="Fabric">
+                <h3 class="text-lg serif-majestic gold-shimmer tracking-widest">Instant Settle</h3>
+                <p class="text-[11px] leading-relaxed opacity-60 uppercase tracking-tighter">Integrated M-Pesa VVIP middleware. Frictionless booking deposits.</p>
+            </div>
+            <div class="royal-card p-10 space-y-6">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/17696835673956560444_0" class="w-full h-40 object-cover opacity-50 mb-4" alt="Lounge">
+                <h3 class="text-lg serif-majestic gold-shimmer tracking-widest">Global Access</h3>
+                <p class="text-[11px] leading-relaxed opacity-60 uppercase tracking-tighter">Exclusive members-only digital portal for fabric arrivals from London.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal (Functional) -->
+    <div id="bookingModal" class="modal">
+        <div class="bg-[#062c21] p-8 md:p-12 max-w-lg w-full border border-[#c5a059]/30 relative mx-4">
+            <button onclick="toggleModal('bookingModal')" class="absolute top-4 right-4 text-white text-xl">&times;</button>
+            <h2 class="text-2xl serif-majestic gold-shimmer mb-6">VVIP Consultation</h2>
+            <form class="space-y-4" onsubmit="handleForm(event)">
+                <input type="text" placeholder="Full Name" class="w-full bg-emerald-950/50 border border-white/10 p-4 text-xs outline-none focus:border-[#c5a059]" required>
+                <input type="tel" placeholder="M-Pesa Number (07...)" class="w-full bg-emerald-950/50 border border-white/10 p-4 text-xs outline-none focus:border-[#c5a059]" required>
+                <select class="w-full bg-emerald-950/50 border border-white/10 p-4 text-xs outline-none focus:border-[#c5a059]">
+                    <option>Wedding Collection</option>
+                    <option>Executive Corporate</option>
+                    <option>The Sovereign 500k Range</option>
+                </select>
+                <button type="submit" class="w-full bg-[#c5a059] text-black py-4 font-bold uppercase tracking-widest text-[10px]">Initialize STK Push</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-[#c5a059]/10 text-center bg-[#03110d]">
+        <div class="serif-majestic text-xl gold-shimmer mb-4">BOLO BESPOKE</div>
+        <p class="text-[8px] tracking-[0.5em] uppercase opacity-40">Digital Architecture by Quintus Ong'ang'a</p>
+        <p class="text-[8px] tracking-[0.5em] uppercase opacity-40 mt-2">0701911486 | quintusclaude15@gmail.com</p>
+    </footer>
+
+    <script>
+        function toggleModal(id) {
+            document.getElementById(id).classList.toggle('active');
+        }
+        function handleForm(e) {
+            e.preventDefault();
+            alert("M-Pesa STK Push Sent! This simulates your secure middleware integration.");
+            toggleModal('bookingModal');
+        }
+    </script>
+</body>
+</html>
