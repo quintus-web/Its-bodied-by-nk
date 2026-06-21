@@ -3,1606 +3,1401 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NK Beauty — Luxury Wigs, Makeup & Bridal Glam | Nairobi</title>
+<title>NK Beauty — Luxury Wigs, Makeup & Bridal Glam Nairobi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#080808;
+  --deep:#0f0f0f;
+  --card:#141414;
+  --border:#1e1e1e;
+  --gold:#c9974a;
+  --gold2:#e8b96a;
+  --gold3:#f0d090;
+  --cream:#f5ede0;
+  --cream2:#d9c8b0;
+  --white:#ffffff;
+  --muted:#6b6b6b;
+  --muted2:#444;
+  --r:0px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--black);color:var(--cream);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-:root {
-  --cream: #FAF8F4;
-  --cream-mid: #F0EDE6;
-  --cream-dark: #E2DDD4;
-  --ink: #111010;
-  --ink-soft: #2A2520;
-  --gold: #B8922A;
-  --gold-light: #D4A84B;
-  --gold-pale: #F0E4C4;
-  --muted: #8A8178;
-  --white: #FFFFFF;
-}
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
 
-html { scroll-behavior: smooth; }
+/* ══════════════════════════════════
+   ANNOUNCEMENT BAR
+══════════════════════════════════ */
+.ann-bar{
+  background:var(--gold);
+  color:var(--black);
+  text-align:center;
+  padding:0.55rem 1rem;
+  font-family:'Inter',sans-serif;
+  font-size:0.72rem;
+  font-weight:500;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  position:relative;z-index:200
+}
+.ann-bar a{color:var(--black);text-decoration:underline;margin-left:0.5rem}
 
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  overflow-x: hidden;
+/* ══════════════════════════════════
+   NAVIGATION
+══════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:150;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 4rem;
+  transition:all 0.4s ease;
 }
+nav.has-ann{top:34px}
+nav.scrolled{
+  background:rgba(8,8,8,0.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0.85rem 4rem;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;
+  font-weight:400;
+  color:var(--white);
+  text-decoration:none;
+  letter-spacing:0.04em;
+}
+.nav-logo span{color:var(--gold);font-style:italic}
+.nav-center{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-center a{
+  font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(245,237,224,0.65);text-decoration:none;transition:color 0.25s;
+  white-space:nowrap;
+}
+.nav-center a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1.5rem}
+.nav-icon-btn{
+  background:none;border:none;cursor:pointer;
+  color:rgba(245,237,224,0.7);transition:color 0.25s;
+  display:flex;align-items:center;
+  position:relative;
+}
+.nav-icon-btn:hover{color:var(--gold)}
+.cart-count{
+  position:absolute;top:-6px;right:-7px;
+  background:var(--gold);color:var(--black);
+  width:16px;height:16px;border-radius:50%;
+  font-size:0.58rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.nav-book{
+  font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
+  background:var(--gold);color:var(--black);
+  padding:0.65rem 1.5rem;text-decoration:none;
+  font-weight:500;transition:background 0.3s;border:none;cursor:pointer;
+}
+.nav-book:hover{background:var(--gold2)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1px;background:var(--cream);transition:all 0.3s}
 
-/* ── ANNOUNCEMENT BAR ── */
-.announce-bar {
-  background: var(--ink);
-  color: var(--cream);
-  text-align: center;
-  padding: 0.7rem 2rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+.hero{
+  position:relative;min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding-top:34px;overflow:hidden;
 }
-.announce-bar a { color: var(--gold-light); text-decoration: none; margin-left: 0.5rem; }
-
-/* ── NAV ── */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: var(--cream);
-  border-bottom: 1px solid var(--cream-dark);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 0 3rem;
-  height: 70px;
-  transition: box-shadow 0.3s;
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 4rem 0 4rem;
+  position:relative;z-index:2;background:var(--black);
 }
-nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-
-.nav-left {
-  display: flex;
-  gap: 2.5rem;
-  align-items: center;
+.hero-right{position:relative;overflow:hidden}
+.hero-img{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85&fit=crop') center/cover no-repeat;
+  transition:transform 8s ease;
 }
-.nav-left a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.2s;
+.hero:hover .hero-img{transform:scale(1.04)}
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,var(--black) 0%,transparent 30%);
 }
-.nav-left a:hover { color: var(--gold); }
-
-.nav-logo {
-  text-align: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--ink);
-  text-decoration: none;
+.hero-eyebrow{
+  font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+  display:flex;align-items:center;gap:1rem;
 }
-.nav-logo span { color: var(--gold); font-style: italic; }
-
-.nav-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 2rem;
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,5.5vw,5.5rem);
+  font-weight:400;line-height:1.05;letter-spacing:-0.01em;
+  color:var(--white);margin-bottom:1.8rem;
 }
-.nav-right a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.2s;
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{
+  font-size:0.95rem;line-height:1.9;color:var(--cream2);
+  max-width:420px;margin-bottom:2.5rem;font-weight:300;
 }
-.nav-right a:hover { color: var(--gold); }
-.nav-book {
-  background: var(--ink) !important;
-  color: var(--cream) !important;
-  padding: 0.6rem 1.4rem !important;
-  letter-spacing: 0.15em !important;
-  transition: background 0.2s !important;
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-gold{
+  font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;
+  background:var(--gold);color:var(--black);padding:1.1rem 2.5rem;
+  text-decoration:none;font-weight:500;transition:all 0.3s;border:none;cursor:pointer;
+  display:inline-block;
 }
-.nav-book:hover { background: var(--gold) !important; color: var(--white) !important; }
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  padding: 4px;
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-outline{
+  font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;
+  border:1px solid rgba(245,237,224,0.25);color:var(--cream);
+  padding:1.1rem 2.5rem;text-decoration:none;
+  font-weight:400;transition:all 0.3s;display:inline-block;
 }
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 1px;
-  background: var(--ink);
-  transition: all 0.3s;
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-badges{
+  display:flex;gap:2.5rem;margin-top:3.5rem;
+  padding-top:2rem;border-top:1px solid var(--border);
 }
-
-/* ── TICKER ── */
-.ticker-wrap {
-  overflow: hidden;
-  background: var(--gold-pale);
-  border-top: 1px solid var(--cream-dark);
-  border-bottom: 1px solid var(--cream-dark);
-  padding: 0.65rem 0;
+.hero-badge-num{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:400;color:var(--gold);line-height:1;
 }
-.ticker-track {
-  display: flex;
-  gap: 0;
-  animation: ticker 30s linear infinite;
-  white-space: nowrap;
+.hero-badge-lbl{
+  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-top:0.3rem;
 }
-.ticker-track span {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold);
-  padding: 0 3rem;
-}
-.ticker-track span.dot { color: var(--ink); opacity: 0.3; padding: 0; }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* ── HERO ── */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 71px);
-}
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 5rem 5rem 5rem 6rem;
-  background: var(--cream);
-}
-.hero-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.hero-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
-
-.hero-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.5rem, 5.5vw, 6.5rem);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 2.5rem;
-}
-.hero-headline em {
-  font-style: italic;
-  color: var(--gold);
-  display: block;
+/* gold vertical accent */
+.hero-line{
+  position:absolute;left:0;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent 0%,var(--gold) 40%,var(--gold) 60%,transparent 100%);
+  z-index:3;
 }
 
-.hero-sub {
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.9;
-  color: var(--muted);
-  max-width: 360px;
-  margin-bottom: 3rem;
+/* ══════════════════════════════════
+   MARQUEE
+══════════════════════════════════ */
+.marquee-wrap{
+  background:var(--gold);padding:1rem 0;overflow:hidden;
+  border-top:1px solid rgba(0,0,0,0.1);
 }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.marquee-track{
+  display:flex;gap:3rem;white-space:nowrap;
+  animation:marquee 22s linear infinite;
+}
+.marquee-track span{
+  font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--black);font-weight:500;
+}
+.marquee-dot{color:rgba(0,0,0,0.35);margin:0 0.5rem}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-.btn-dark {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--white);
-  background: var(--ink);
-  padding: 1rem 2.2rem;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.25s;
+/* ══════════════════════════════════
+   SECTIONS BASE
+══════════════════════════════════ */
+.section{padding:7rem 4rem}
+.section-sm{padding:5rem 4rem}
+.eyebrow{
+  font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+  display:flex;align-items:center;gap:1rem;
 }
-.btn-dark:hover { background: var(--gold); }
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::before{display:none}
+.h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.8vw,3.5rem);
+  font-weight:400;line-height:1.1;color:var(--white);margin-bottom:1.2rem;
+}
+.h2 em{font-style:italic;color:var(--gold)}
+.body-text{font-size:0.92rem;line-height:1.95;color:var(--cream2);font-weight:300}
+.divline{width:100%;height:1px;background:var(--border)}
 
-.btn-outline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink);
-  border: 1px solid var(--cream-dark);
-  padding: 1rem 2.2rem;
-  text-decoration: none;
-  display: inline-block;
-  transition: border-color 0.25s, color 0.25s;
+/* ══════════════════════════════════
+   ABOUT
+══════════════════════════════════ */
+.about{
+  background:var(--deep);
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
 }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.about-img-col{position:relative;min-height:620px;overflow:hidden}
+.about-main-img{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1503236823255-94609f598e71?w=800&q=85&fit=crop') center/cover no-repeat;
+}
+.about-main-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(15,15,15,0.8));
+}
+.about-accent-box{
+  position:absolute;bottom:2.5rem;right:-2rem;
+  width:200px;height:240px;z-index:2;
+  background:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=85&fit=crop') center/cover no-repeat;
+  border:3px solid var(--black);
+}
+.about-gold-pill{
+  position:absolute;top:2.5rem;left:2.5rem;z-index:3;
+  background:var(--gold);color:var(--black);
+  font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1rem;font-weight:600;
+}
+.about-text-col{
+  padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center;
+}
+blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-style:italic;font-weight:300;
+  line-height:1.75;color:var(--cream2);
+  border-left:2px solid var(--gold);padding-left:1.5rem;
+  margin:2rem 0;
+}
+.signature{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;font-style:italic;color:var(--gold);margin-top:2.5rem;
+}
+.signature-title{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
 
-.hero-stats {
-  display: flex;
-  gap: 3rem;
-  margin-top: 4rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--cream-dark);
+/* ══════════════════════════════════
+   SERVICES
+══════════════════════════════════ */
+.services{background:var(--black)}
+.services-top{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.srv-card{
+  background:var(--deep);padding:2.5rem;
+  position:relative;overflow:hidden;transition:background 0.35s;cursor:default;
 }
-.stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 300;
-  color: var(--ink);
+.srv-card:hover{background:#121212}
+.srv-img{
+  width:100%;height:200px;object-fit:cover;
+  filter:grayscale(30%) brightness(0.75);
+  transition:filter 0.5s,transform 0.6s;margin-bottom:1.5rem;
+  display:block;
 }
-.stat-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 0.2rem;
+.srv-card:hover .srv-img{filter:grayscale(0%) brightness(0.9);transform:scale(1.02)}
+.srv-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;font-weight:400;color:var(--white);margin-bottom:0.6rem;
 }
+.srv-desc{font-size:0.82rem;line-height:1.85;color:var(--cream2);margin-bottom:1.4rem}
+.srv-from{font-size:0.7rem;color:var(--gold);letter-spacing:0.05em}
+.srv-from span{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;margin-left:0.3rem}
+.srv-link{
+  display:inline-flex;align-items:center;gap:0.5rem;margin-top:1rem;
+  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
+  text-decoration:none;transition:gap 0.3s;
+}
+.srv-link:hover{gap:0.8rem}
+.srv-bottom-line{
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform 0.4s;
+}
+.srv-card:hover .srv-bottom-line{transform:scaleX(1)}
 
-.hero-right {
-  position: relative;
-  overflow: hidden;
+/* ══════════════════════════════════
+   SHOP / E-COMMERCE
+══════════════════════════════════ */
+.shop{background:var(--deep)}
+.shop-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+.shop-filters{display:flex;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.filter-btn{
+  font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;
+  border:1px solid var(--border);color:var(--muted);
+  background:none;padding:0.5rem 1.2rem;cursor:pointer;
+  transition:all 0.25s;
 }
-.hero-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
+.filter-btn.active,.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.product-card{
+  background:var(--deep);cursor:pointer;position:relative;
+  transition:background 0.3s;
 }
-.hero-img-label {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(8px);
-  padding: 0.7rem 1.2rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
+.product-card:hover{background:var(--card)}
+.product-img-wrap{position:relative;overflow:hidden;aspect-ratio:3/4}
+.product-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.6s ease,filter 0.4s;
+  filter:brightness(0.9);
 }
+.product-card:hover .product-img-wrap img{transform:scale(1.05);filter:brightness(1)}
+.product-badge{
+  position:absolute;top:0.8rem;left:0.8rem;z-index:2;
+  font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;
+  padding:0.3rem 0.7rem;font-weight:500;
+}
+.badge-new{background:var(--gold);color:var(--black)}
+.badge-hot{background:#c94040;color:#fff}
+.badge-sale{background:#1a6b3a;color:#fff}
+.product-quick{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  background:rgba(8,8,8,0.92);padding:0.9rem;
+  display:flex;gap:0.5rem;
+  transform:translateY(100%);transition:transform 0.35s;
+}
+.product-card:hover .product-quick{transform:translateY(0)}
+.quick-btn{
+  flex:1;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;
+  background:var(--gold);color:var(--black);
+  border:none;padding:0.6rem;cursor:pointer;font-weight:500;transition:background 0.25s;
+}
+.quick-btn:hover{background:var(--gold2)}
+.quick-wish{
+  width:38px;background:var(--border);border:none;cursor:pointer;color:var(--cream);
+  display:flex;align-items:center;justify-content:center;transition:background 0.25s;
+}
+.quick-wish:hover{background:#222}
+.product-info{padding:1.2rem}
+.product-cat{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem}
+.product-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--white);margin-bottom:0.5rem;line-height:1.3}
+.product-price{display:flex;align-items:baseline;gap:0.5rem}
+.price-current{font-size:0.95rem;color:var(--cream);font-weight:400}
+.price-old{font-size:0.8rem;color:var(--muted);text-decoration:line-through}
+.price-save{font-size:0.6rem;color:#4caf82;letter-spacing:0.1em}
+.product-stars{display:flex;align-items:center;gap:0.3rem;margin-top:0.4rem}
+.stars{color:var(--gold);font-size:0.65rem;letter-spacing:1px}
+.review-count{font-size:0.68rem;color:var(--muted)}
+.shop-more{text-align:center;margin-top:3rem}
 
-/* ── CATEGORIES STRIP ── */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--cream-dark);
+/* ══════════════════════════════════
+   BANNER / PROMO SPLIT
+══════════════════════════════════ */
+.promo-split{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.promo-panel{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.promo-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s}
+.promo-panel:hover .promo-bg{transform:scale(1.04)}
+.promo-overlay{position:absolute;inset:0}
+.promo-content{position:relative;z-index:2;text-align:center;padding:3rem}
+.promo-tag{
+  font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.8rem;
 }
-.cat-item {
-  position: relative;
-  overflow: hidden;
-  height: 420px;
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
+.promo-h{
+  font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.4rem);
+  font-weight:400;color:var(--white);line-height:1.15;margin-bottom:1.2rem;
 }
-.cat-item + .cat-item { border-left: 1px solid var(--cream-dark); }
-.cat-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.6s ease;
-  filter: brightness(0.82);
-}
-.cat-item:hover img { transform: scale(1.04); }
-.cat-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 2rem;
-  background: linear-gradient(to top, rgba(17,16,16,0.7) 0%, transparent 60%);
-}
-.cat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.15);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.cat-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: #fff;
-  line-height: 1.2;
-}
-.cat-sub {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  margin-top: 0.4rem;
-}
-.cat-arrow {
-  margin-top: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s, transform 0.3s;
-}
-.cat-item:hover .cat-arrow { opacity: 1; transform: translateY(0); }
+.promo-h em{font-style:italic;color:var(--gold)}
 
-/* ── EDITORIAL SPLIT: ABOUT ── */
-.editorial {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--cream-dark);
+/* ══════════════════════════════════
+   GALLERY
+══════════════════════════════════ */
+.gallery{background:var(--black);padding:7rem 0}
+.gallery-inner{padding:0 4rem;margin-bottom:2.5rem}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:300px 300px;
+  gap:3px;padding:0 4rem;
 }
-.editorial.reverse { direction: rtl; }
-.editorial.reverse > * { direction: ltr; }
+.g-cell{position:relative;overflow:hidden;cursor:pointer}
+.g-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s,filter 0.4s;filter:brightness(0.8)}
+.g-cell:hover img{transform:scale(1.06);filter:brightness(1)}
+.g-cell:first-child{grid-row:1/3}
+.g-tag{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(8,8,8,0.85) 0%,transparent 100%);
+  padding:1.5rem 1rem 0.8rem;
+  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream);
+  opacity:0;transition:opacity 0.35s;
+}
+.g-cell:hover .g-tag{opacity:1}
 
-.editorial-img {
-  overflow: hidden;
-  height: 700px;
+/* ══════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════ */
+.testi{background:var(--deep);overflow:hidden;position:relative}
+.testi-bg-word{
+  position:absolute;right:-3%;top:50%;transform:translateY(-50%);
+  font-family:'Playfair Display',serif;font-size:22vw;font-weight:400;
+  color:rgba(201,151,74,0.03);letter-spacing:-0.05em;pointer-events:none;user-select:none;
+  white-space:nowrap;line-height:1;
 }
-.editorial-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.7s ease;
+.testi-head{text-align:center;max-width:520px;margin:0 auto 4rem}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.t-card{background:var(--deep);padding:2.4rem;position:relative}
+.t-card::before{content:'"';
+  position:absolute;top:1rem;right:1.5rem;
+  font-family:'Playfair Display',serif;font-size:5rem;line-height:1;
+  color:rgba(201,151,74,0.08);
 }
-.editorial-img:hover img { transform: scale(1.03); }
+.t-stars{color:var(--gold);font-size:0.75rem;letter-spacing:2px;margin-bottom:1rem}
+.t-body{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-style:italic;line-height:1.85;
+  color:var(--cream2);margin-bottom:1.5rem;
+}
+.t-author{display:flex;align-items:center;gap:0.8rem}
+.t-avi{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--gold);display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1rem;color:var(--black);flex-shrink:0;
+}
+.t-name{font-size:0.75rem;font-weight:500;color:var(--white);letter-spacing:0.05em}
+.t-loc{font-size:0.7rem;color:var(--muted);margin-top:0.15rem}
 
-.editorial-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 5rem 6rem;
-  background: var(--cream);
-}
-.editorial.reverse .editorial-text { background: var(--cream-mid); }
+/* ══════════════════════════════════
+   FEATURES / WHY NK
+══════════════════════════════════ */
+.why{background:var(--gold);padding:5rem 4rem}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(0,0,0,0.15);margin-top:3rem}
+.why-card{background:var(--gold);padding:2rem}
+.why-icon{margin-bottom:1rem}
+.why-icon svg{stroke:var(--black);fill:none;stroke-width:1.5;width:28px;height:28px}
+.why-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--black);margin-bottom:0.5rem}
+.why-desc{font-size:0.8rem;line-height:1.7;color:rgba(0,0,0,0.65)}
+.why .h2{color:var(--black)}
+.why .eyebrow{color:rgba(0,0,0,0.55)}
+.why .eyebrow::before{background:rgba(0,0,0,0.4)}
 
-.eyebrow {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+/* ══════════════════════════════════
+   PRICING
+══════════════════════════════════ */
+.pricing{background:var(--black)}
+.pricing-head{text-align:center;max-width:560px;margin:0 auto 4rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);max-width:1050px;margin:0 auto}
+.p-card{background:var(--deep);padding:3rem 2.4rem;position:relative}
+.p-card.feat{background:var(--card);border-top:2px solid var(--gold)}
+.p-badge{
+  position:absolute;top:-1px;left:50%;transform:translateX(-50%) translateY(-100%);
+  background:var(--gold);color:var(--black);
+  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.35rem 1rem;font-weight:600;white-space:nowrap;
 }
-.eyebrow::before { content: '—'; color: var(--gold); letter-spacing: 0; }
+.p-tier{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.p-name{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:1rem}
+.p-amount{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:400;color:var(--white);line-height:1}
+.p-cur{font-size:1rem;color:var(--gold);vertical-align:top;margin-top:0.4rem;display:inline-block}
+.p-per{font-size:0.8rem;color:var(--muted)}
+.p-hr{height:1px;background:var(--border);margin:1.5rem 0}
+.p-list{list-style:none;margin-bottom:2rem}
+.p-list li{font-size:0.82rem;color:var(--cream2);padding:0.45rem 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:0.6rem;align-items:flex-start;line-height:1.5}
+.p-list li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:0.45rem}
+.p-btn{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;
+  padding:0.95rem;transition:all 0.3s;border:none;cursor:pointer;font-weight:500;
+}
+.p-btn-o{color:var(--gold);border:1px solid rgba(201,151,74,0.35);background:none}
+.p-btn-o:hover{background:rgba(201,151,74,0.08);border-color:var(--gold)}
+.p-btn-f{color:var(--black);background:var(--gold)}
+.p-btn-f:hover{background:var(--gold2)}
 
-.editorial-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 3.5vw, 4rem);
-  font-weight: 300;
-  line-height: 1.05;
-  color: var(--ink);
-  margin-bottom: 1.8rem;
+/* ══════════════════════════════════
+   BOOKING + CONTACT
+══════════════════════════════════ */
+.contact{display:grid;grid-template-columns:1fr 1fr;padding:0}
+.contact-left{
+  background:var(--gold);
+  padding:7rem 5rem;display:flex;flex-direction:column;justify-content:center;
 }
-.editorial-title em { font-style: italic; color: var(--gold); }
+.contact-left .h2{color:var(--black)}
+.contact-left .eyebrow{color:rgba(0,0,0,0.55)}
+.contact-left .eyebrow::before{background:rgba(0,0,0,0.4)}
+.contact-left .body-text{color:rgba(0,0,0,0.6)}
+.c-list{margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem}
+.c-item{display:flex;align-items:flex-start;gap:1rem}
+.c-icon{
+  width:38px;height:38px;flex-shrink:0;
+  border:1px solid rgba(0,0,0,0.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.c-icon svg{stroke:var(--black);fill:none;stroke-width:1.5;width:16px;height:16px}
+.c-lbl{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(0,0,0,0.5)}
+.c-val{font-size:0.9rem;color:var(--black);margin-top:0.1rem}
+.socials{display:flex;gap:0.8rem;margin-top:2rem}
+.s-btn{
+  width:40px;height:40px;border:1px solid rgba(0,0,0,0.25);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;color:var(--black);transition:background 0.25s;
+}
+.s-btn:hover{background:rgba(0,0,0,0.1)}
+.s-btn svg{stroke:currentColor;fill:none;stroke-width:2;width:16px;height:16px}
+.contact-right{background:var(--deep);padding:7rem 5rem}
+.form-title{
+  font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;
+  color:var(--white);margin-bottom:2rem;line-height:1.2;
+}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-group{margin-bottom:1rem}
+.f-lbl{
+  display:block;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.45rem;
+}
+.f-in,.f-sel,.f-ta{
+  width:100%;background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);color:var(--cream);
+  font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:300;
+  padding:0.85rem 1rem;outline:none;transition:border-color 0.3s;
+  -webkit-appearance:none;appearance:none;border-radius:0;
+}
+.f-in:focus,.f-sel:focus,.f-ta:focus{border-color:var(--gold)}
+.f-in::placeholder,.f-ta::placeholder{color:var(--muted2)}
+.f-sel{cursor:pointer;color:var(--cream);background-color:#1a1a1a}
+.f-sel option{background:#1a1a1a;color:var(--cream)}
+.f-ta{resize:vertical;min-height:100px}
+.f-submit{
+  width:100%;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  background:var(--gold);color:var(--black);
+  border:none;padding:1.1rem;cursor:pointer;margin-top:0.5rem;
+  font-weight:500;transition:background 0.3s;
+}
+.f-submit:hover{background:var(--gold2)}
+.f-submit:disabled{opacity:0.6;cursor:not-allowed}
 
-.editorial-body {
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 2;
-  color: var(--muted);
-  max-width: 420px;
+/* ══════════════════════════════════
+   INSTAGRAM FEED STRIP
+══════════════════════════════════ */
+.igfeed{background:var(--black);padding:5rem 0}
+.igfeed-head{padding:0 4rem;margin-bottom:2rem;display:flex;justify-content:space-between;align-items:flex-end}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:3px}
+.ig-cell{position:relative;overflow:hidden;aspect-ratio:1}
+.ig-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s,filter 0.4s;filter:brightness(0.85)}
+.ig-cell:hover img{transform:scale(1.08);filter:brightness(1)}
+.ig-hover{
+  position:absolute;inset:0;background:rgba(8,8,8,0.5);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity 0.35s;
+  font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);
 }
-.editorial-body + .editorial-body { margin-top: 1.2rem; }
+.ig-cell:hover .ig-hover{opacity:1}
 
-blockquote.pull-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink-soft);
-  border-left: 2px solid var(--gold);
-  padding-left: 1.5rem;
-  margin: 2rem 0;
-  line-height: 1.7;
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer{background:#040404;padding:5rem 4rem 2rem}
+.footer-grid{
+  display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:4rem;
+  padding-bottom:4rem;border-bottom:1px solid var(--border);
 }
-
-.founder-sig { margin-top: 2.5rem; }
-.founder-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink);
-  font-weight: 600;
+.f-brand .nav-logo{font-size:1.6rem;display:block;margin-bottom:1rem}
+.f-tagline{font-size:0.85rem;line-height:1.8;color:var(--muted);max-width:260px}
+.f-social{display:flex;gap:0.7rem;margin-top:1.5rem}
+.f-social a{
+  width:34px;height:34px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  color:var(--muted);transition:all 0.3s;
 }
-.founder-role {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-top: 0.25rem;
+.f-social a:hover{border-color:var(--gold);color:var(--gold)}
+.f-social a svg{stroke:currentColor;fill:none;stroke-width:2;width:14px;height:14px}
+.f-col-title{
+  font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.2rem;
 }
-
-.editorial-cta { margin-top: 2.5rem; }
-
-/* ── SERVICES GRID ── */
-.services-section {
-  background: var(--ink);
-  padding: 6rem 5rem;
+.f-links{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+.f-links a{font-size:0.83rem;color:var(--muted);text-decoration:none;transition:color 0.25s;font-weight:300}
+.f-links a:hover{color:var(--cream)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:2rem;flex-wrap:wrap;gap:1rem;
 }
-.services-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 4rem;
-}
-.services-top-text .eyebrow { color: rgba(184,146,42,1); }
-.services-top-text .eyebrow::before { color: rgba(184,146,42,1); }
-.services-heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 3.5vw, 4.2rem);
-  font-weight: 300;
-  color: var(--cream);
-  line-height: 1.05;
-  margin-top: 0.5rem;
-}
-.services-heading em { font-style: italic; color: var(--gold-light); }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,0.06);
-}
-.svc-card {
-  background: #181614;
-  padding: 2.8rem 2.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.3s;
-}
-.svc-card:hover { background: #201e1b; }
-.svc-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 1px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s;
-}
-.svc-card:hover::after { transform: scaleX(1); }
-
-.svc-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.04);
-  line-height: 1;
-  margin-bottom: 1.5rem;
-}
-.svc-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--cream);
-  margin-bottom: 0.8rem;
-}
-.svc-desc {
-  font-size: 0.85rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: rgba(250,248,244,0.5);
-  margin-bottom: 1.8rem;
-}
-.svc-link {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: gap 0.3s;
-}
-.svc-link:hover { gap: 0.9rem; }
-.svc-link::after { content: '→'; }
-
-/* ── GALLERY ── */
-.gallery-section { padding: 6rem 5rem; }
-.gallery-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 3rem;
-}
-.gallery-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 3vw, 3.5rem);
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1.1;
-}
-.gallery-title em { font-style: italic; color: var(--gold); }
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 300px 300px;
-  gap: 4px;
-}
-.g-cell {
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-.g-cell:first-child { grid-row: 1 / 3; }
-.g-cell img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.6s ease;
-  filter: brightness(0.9);
-}
-.g-cell:hover img { transform: scale(1.05); filter: brightness(0.75); }
-.g-label {
-  position: absolute;
-  bottom: 1.2rem;
-  left: 1.2rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0);
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(4px);
-  padding: 0.4rem 0.8rem;
-  transition: color 0.3s;
-}
-.g-cell:hover .g-label { color: #fff; }
-
-/* ── MARQUEE DIVIDER ── */
-.marquee-section {
-  background: var(--ink);
-  overflow: hidden;
-  padding: 1.2rem 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.marquee-track {
-  display: flex;
-  animation: ticker 20s linear infinite;
-  white-space: nowrap;
-}
-.marquee-track span {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(255,255,255,0.15);
-  padding: 0 2.5rem;
-}
-.marquee-track span.gold { color: var(--gold); }
-
-/* ── PRICING ── */
-.pricing-section { padding: 7rem 5rem; background: var(--cream-mid); }
-.pricing-header { text-align: center; max-width: 540px; margin: 0 auto 5rem; }
-.pricing-header .eyebrow { justify-content: center; }
-.pricing-header .eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
-.pricing-main-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  font-weight: 300;
-  color: var(--ink);
-  margin-top: 0.5rem;
-}
-.pricing-main-title em { font-style: italic; color: var(--gold); }
-.pricing-sub {
-  font-size: 0.92rem;
-  font-weight: 300;
-  color: var(--muted);
-  margin-top: 0.8rem;
-  line-height: 1.8;
+.f-copy{font-size:0.73rem;color:var(--muted2)}
+.f-legal{display:flex;gap:2rem}
+.f-legal a{font-size:0.7rem;color:var(--muted2);text-decoration:none;transition:color 0.3s}
+.f-legal a:hover{color:var(--gold)}
+.f-payments{display:flex;gap:0.5rem;align-items:center}
+.pay-pill{
+  font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;
+  border:1px solid var(--border);color:var(--muted2);padding:0.25rem 0.6rem;
 }
 
-.pricing-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--cream-dark);
-  max-width: 1100px;
-  margin: 0 auto;
+/* ══════════════════════════════════
+   CART DRAWER
+══════════════════════════════════ */
+.cart-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:300;
+  opacity:0;pointer-events:none;transition:opacity 0.35s;
 }
-.p-card {
-  background: var(--cream);
-  padding: 3rem 2.5rem;
-  position: relative;
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-drawer{
+  position:fixed;top:0;right:0;bottom:0;width:420px;max-width:90vw;
+  background:var(--deep);z-index:301;border-left:1px solid var(--border);
+  transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  display:flex;flex-direction:column;
 }
-.p-card.featured {
-  background: var(--ink);
-  color: var(--cream);
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.5rem 1.8rem;border-bottom:1px solid var(--border);
 }
-.p-tier {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
+.cart-head-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white)}
+.cart-close{background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.2rem;transition:color 0.25s}
+.cart-close:hover{color:var(--cream)}
+.cart-items{flex:1;overflow-y:auto;padding:1.5rem 1.8rem}
+.cart-empty{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  height:100%;gap:1rem;text-align:center;
 }
-.p-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 300;
-  margin-bottom: 1.5rem;
+.cart-empty-icon svg{stroke:var(--muted);fill:none;stroke-width:1.2;width:48px;height:48px}
+.cart-empty p{font-size:0.85rem;color:var(--muted)}
+.cart-item{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.cart-item-img{width:75px;height:90px;object-fit:cover;flex-shrink:0}
+.cart-item-info{flex:1}
+.cart-item-cat{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem}
+.cart-item-name{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--white);margin-bottom:0.4rem}
+.cart-item-price{font-size:0.85rem;color:var(--cream2)}
+.cart-item-remove{background:none;border:none;cursor:pointer;color:var(--muted);font-size:0.7rem;margin-top:0.5rem;text-decoration:underline;transition:color 0.25s}
+.cart-item-remove:hover{color:var(--cream)}
+.cart-qty{display:flex;align-items:center;gap:0.6rem;margin-top:0.5rem}
+.qty-btn{width:24px;height:24px;border:1px solid var(--border);background:none;color:var(--cream);cursor:pointer;transition:border-color 0.25s;display:flex;align-items:center;justify-content:center;font-size:0.8rem}
+.qty-btn:hover{border-color:var(--gold)}
+.qty-num{font-size:0.85rem;min-width:20px;text-align:center}
+.cart-foot{padding:1.5rem 1.8rem;border-top:1px solid var(--border)}
+.cart-subtotal{display:flex;justify-content:space-between;margin-bottom:0.5rem}
+.cart-sub-lbl{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+.cart-sub-val{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white)}
+.cart-note{font-size:0.72rem;color:var(--muted);margin-bottom:1.2rem}
+.cart-checkout{
+  display:block;width:100%;text-align:center;
+  font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  background:var(--gold);color:var(--black);
+  padding:1rem;border:none;cursor:pointer;font-weight:500;transition:background 0.3s;text-decoration:none;
 }
-.p-card.featured .p-name { color: var(--cream); }
-.p-price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1;
-}
-.p-card.featured .p-price { color: var(--cream); }
-.p-currency {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1rem;
-  vertical-align: super;
-  font-weight: 300;
-  color: var(--gold);
-}
-.p-period {
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-left: 0.2rem;
-  font-weight: 300;
-}
-.p-card.featured .p-period { color: rgba(250,248,244,0.5); }
-.p-divider { height: 1px; background: var(--cream-dark); margin: 1.8rem 0; }
-.p-card.featured .p-divider { background: rgba(255,255,255,0.1); }
-.p-features {
-  list-style: none;
-  margin-bottom: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.p-features li {
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--muted);
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-  line-height: 1.5;
-}
-.p-card.featured .p-features li { color: rgba(250,248,244,0.65); }
-.p-features li::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--gold);
-  flex-shrink: 0;
-  margin-top: 0.45rem;
-}
-.p-btn {
-  display: block;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1rem;
-  transition: all 0.25s;
-}
-.p-btn-outline {
-  border: 1px solid var(--cream-dark);
-  color: var(--ink);
-}
-.p-btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-.p-btn-filled {
-  background: var(--gold);
-  color: var(--white);
-}
-.p-btn-filled:hover { background: var(--gold-light); }
-.p-badge {
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--white);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0.3rem 1rem;
-  white-space: nowrap;
-}
+.cart-checkout:hover{background:var(--gold2)}
 
-/* ── TESTIMONIALS ── */
-.testi-section { padding: 7rem 5rem; background: var(--cream); }
-.testi-header { text-align: center; margin-bottom: 4rem; }
-.testi-header .eyebrow { justify-content: center; }
-.testi-header .eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
-.testi-main-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
-  font-weight: 300;
-  color: var(--ink);
-  margin-top: 0.5rem;
+/* ══════════════════════════════════
+   MOBILE NAV MENU
+══════════════════════════════════ */
+.mobile-menu{
+  position:fixed;inset:0;background:var(--black);z-index:149;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:2rem;padding:4rem;
+  transform:translateY(-100%);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);
 }
-.testi-main-title em { font-style: italic; color: var(--gold); }
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{
+  font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;
+  color:var(--white);text-decoration:none;transition:color 0.25s;
+}
+.mobile-menu a:hover{color:var(--gold)}
 
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--cream-dark);
-}
-.t-card {
-  background: var(--cream);
-  padding: 2.5rem;
-}
-.t-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 1.2rem; }
-.t-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1.85;
-  margin-bottom: 1.5rem;
-}
-.t-author { display: flex; align-items: center; gap: 0.8rem; }
-.t-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--gold-pale);
-  border: 1px solid var(--cream-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.t-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  font-weight: 500;
-}
-.t-loc { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+/* ══════════════════════════════════
+   REVEAL ANIMATIONS
+══════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.in{opacity:1;transform:none}
+.delay1{transition-delay:0.1s}.delay2{transition-delay:0.2s}.delay3{transition-delay:0.3s}.delay4{transition-delay:0.4s}
 
-/* ── BOOKING ── */
-.booking-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--cream-dark);
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media(max-width:1100px){
+  nav{padding:1.2rem 2.5rem}
+  nav.scrolled{padding:0.85rem 2.5rem}
+  .section,.section-sm{padding:5rem 2.5rem}
+  .hero-left{padding:0 2.5rem}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .products-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
 }
-.booking-img {
-  overflow: hidden;
-  height: 800px;
-  position: relative;
+@media(max-width:800px){
+  nav{padding:1rem 1.5rem}
+  nav.scrolled{padding:0.75rem 1.5rem}
+  .nav-center,.nav-book{display:none}
+  .hamburger{display:flex}
+  .hero{grid-template-columns:1fr;min-height:80vh}
+  .hero-right{display:none}
+  .hero-line{display:none}
+  .hero-left{padding:6rem 1.5rem 4rem}
+  .section,.section-sm{padding:4rem 1.5rem}
+  .about{grid-template-columns:1fr}
+  .about-img-col{min-height:320px}
+  .about-text-col{padding:3rem 1.5rem}
+  .about-accent-box{display:none}
+  .services-top{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:1fr 1fr}
+  .promo-split{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gallery-grid .g-cell:first-child{grid-row:auto}
+  .gallery-inner,.gallery-grid{padding:0 1.5rem}
+  .testi-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr;max-width:380px}
+  .contact{grid-template-columns:1fr}
+  .contact-left,.contact-right{padding:4rem 1.5rem}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  footer{padding:3rem 1.5rem 2rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .cart-drawer{width:100vw}
+  .shop-header{flex-direction:column;align-items:flex-start;gap:1rem}
 }
-.booking-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-.booking-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(250,248,244,0) 60%, rgba(250,248,244,0.4) 100%);
-}
-.booking-form-side {
-  padding: 5rem;
-  background: var(--cream);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.form-section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
-  margin-top: 0.8rem;
-  line-height: 1.1;
-}
-.form-section-title em { font-style: italic; color: var(--gold); }
-.form-desc { font-size: 0.9rem; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; margin-top: 0.8rem; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.f-group { margin-bottom: 1rem; }
-.f-label {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-.f-input, .f-select, .f-textarea {
-  width: 100%;
-  border: 1px solid var(--cream-dark);
-  background: var(--white);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  padding: 0.85rem 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 0;
-}
-.f-input:focus, .f-select:focus, .f-textarea:focus { border-color: var(--gold); }
-.f-input::placeholder, .f-textarea::placeholder { color: var(--cream-dark); }
-.f-select { cursor: pointer; background: var(--white); }
-.f-textarea { resize: vertical; min-height: 100px; }
-.f-submit {
-  width: 100%;
-  margin-top: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--white);
-  background: var(--ink);
-  border: none;
-  padding: 1.1rem;
-  cursor: pointer;
-  transition: background 0.25s;
-}
-.f-submit:hover { background: var(--gold); }
-
-.contact-chips {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-.chip {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  border: 1px solid var(--cream-dark);
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* ── PRESS ── */
-.press-section {
-  background: var(--cream-mid);
-  padding: 3.5rem 5rem;
-  border-top: 1px solid var(--cream-dark);
-  border-bottom: 1px solid var(--cream-dark);
-}
-.press-inner {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-}
-.press-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--muted);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.press-logos {
-  display: flex;
-  gap: 3.5rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.press-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  opacity: 0.6;
-  font-style: italic;
-}
-
-/* ── FOOTER ── */
-footer {
-  background: var(--ink);
-  padding: 5rem 5rem 2.5rem;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--cream);
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 1.2rem;
-}
-.footer-logo span { color: var(--gold); font-style: italic; }
-.footer-tagline { font-size: 0.85rem; font-weight: 300; color: rgba(250,248,244,0.4); line-height: 1.8; max-width: 240px; }
-.footer-socials { display: flex; gap: 0.8rem; margin-top: 2rem; }
-.footer-socials a {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255,255,255,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(250,248,244,0.5);
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  transition: all 0.2s;
-}
-.footer-socials a:hover { border-color: var(--gold); color: var(--gold); }
-
-.footer-col-head {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-}
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-.footer-links a { font-size: 0.85rem; font-weight: 300; color: rgba(250,248,244,0.45); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--cream); }
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.footer-copy { font-size: 0.72rem; color: rgba(250,248,244,0.25); }
-.footer-legal { display: flex; gap: 2rem; }
-.footer-legal a { font-size: 0.7rem; color: rgba(250,248,244,0.25); text-decoration: none; transition: color 0.2s; }
-.footer-legal a:hover { color: var(--cream); }
-
-/* ── SCROLL REVEAL ── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.up { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 0.1s; }
-.d2 { transition-delay: 0.22s; }
-.d3 { transition-delay: 0.34s; }
-
-/* ── MOBILE ── */
-@media (max-width: 960px) {
-  nav {
-    grid-template-columns: auto 1fr auto;
-    padding: 0 1.5rem;
-  }
-  .nav-left { display: none; }
-  .nav-right { display: none; }
-  .nav-logo { text-align: left; }
-  .hamburger { display: flex; }
-
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 4rem 2rem 3rem; }
-  .hero-right { height: 60vw; }
-  .hero-stats { gap: 2rem; }
-
-  .categories { grid-template-columns: 1fr 1fr; }
-  .cat-item { height: 300px; }
-
-  .editorial { grid-template-columns: 1fr; }
-  .editorial-img { height: 360px; }
-  .editorial-text { padding: 3.5rem 2rem; }
-
-  .services-section { padding: 4rem 2rem; }
-  .services-grid { grid-template-columns: 1fr; }
-  .services-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
-
-  .gallery-section { padding: 4rem 2rem; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 220px); }
-  .g-cell:first-child { grid-row: auto; grid-column: 1 / 3; }
-
-  .pricing-section { padding: 5rem 2rem; }
-  .pricing-cards { grid-template-columns: 1fr; max-width: 420px; }
-
-  .testi-section { padding: 5rem 2rem; }
-  .testi-grid { grid-template-columns: 1fr; }
-
-  .booking-section { grid-template-columns: 1fr; }
-  .booking-img { height: 55vw; }
-  .booking-form-side { padding: 3.5rem 2rem; }
-
-  .press-section { padding: 2.5rem 2rem; }
-  .press-inner { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-
-  footer { padding: 4rem 2rem 2rem; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+@media(max-width:500px){
+  .hero-h1{font-size:2.4rem}
+  .products-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-badges{flex-wrap:wrap;gap:1.5rem}
 }
 </style>
 </head>
 <body>
 
-<!-- ANNOUNCE BAR -->
-<div class="announce-bar">
-  Free Consultation with Every Booking — <a href="#contact">WhatsApp Us Now →</a>
+<!-- ── ANNOUNCEMENT BAR ── -->
+<div class="ann-bar" id="ann">
+  ✦ FREE DELIVERY ACROSS NAIROBI on orders over KSh 5,000 — 
+  <a href="#shop">Shop Now</a>
 </div>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-left">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-  </div>
+<!-- ── NAV ── -->
+<nav id="nav" class="has-ann">
   <a href="#" class="nav-logo">NK <span>Beauty</span></a>
+  <ul class="nav-center">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
   <div class="nav-right">
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
+    <button class="nav-icon-btn" onclick="openCart()" aria-label="Cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
     <a href="#contact" class="nav-book">Book Now</a>
+    <button class="hamburger" id="burger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <button class="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span>Luxury Wigs</span><span class="dot">·</span>
-    <span>Bridal Glam</span><span class="dot">·</span>
-    <span>Makeup Artistry</span><span class="dot">·</span>
-    <span>Custom Units</span><span class="dot">·</span>
-    <span>Nairobi's Finest</span><span class="dot">·</span>
-    <span>Hair Styling</span><span class="dot">·</span>
-    <span>Event Glam</span><span class="dot">·</span>
-    <span>Luxury Wigs</span><span class="dot">·</span>
-    <span>Bridal Glam</span><span class="dot">·</span>
-    <span>Makeup Artistry</span><span class="dot">·</span>
-    <span>Custom Units</span><span class="dot">·</span>
-    <span>Nairobi's Finest</span><span class="dot">·</span>
-    <span>Hair Styling</span><span class="dot">·</span>
-    <span>Event Glam</span><span class="dot">·</span>
-  </div>
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#shop" onclick="closeMenu()">Shop</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
-<!-- HERO -->
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
 <section class="hero" id="home">
   <div class="hero-left">
-    <div class="hero-label">Nairobi's Luxury Beauty House</div>
-    <h1 class="hero-headline">
+    <div class="hero-eyebrow">Nairobi's Luxury Beauty House</div>
+    <h1 class="hero-h1">
       Where Every<br>
-      Woman
-      <em>Becomes</em>
-      Iconic.
+      Woman Becomes<br>
+      <em>Iconic.</em>
     </h1>
-    <p class="hero-sub">Premium human hair wigs. Flawless makeup artistry. Bridal transformations for your most radiant moment.</p>
+    <p class="hero-sub">Luxury wigs. Flawless makeup. Bridal glam that lives forever in photographs. By Cynthia Nduta — Nairobi's most sought-after beauty artist.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-dark">Book a Session</a>
-      <a href="#services" class="btn-outline">Explore Services</a>
+      <a href="#shop" class="btn-gold">Shop Our Wigs</a>
+      <a href="#services" class="btn-outline">Book a Service</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-      <div>
-        <div class="stat-num">6+</div>
-        <div class="stat-label">Years of Artistry</div>
-      </div>
-      <div>
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Human Hair</div>
-      </div>
+    <div class="hero-badges">
+      <div><div class="hero-badge-num">500+</div><div class="hero-badge-lbl">Clients Served</div></div>
+      <div><div class="hero-badge-num">6+</div><div class="hero-badge-lbl">Years of Artistry</div></div>
+      <div><div class="hero-badge-num">100%</div><div class="hero-badge-lbl">Human Hair</div></div>
     </div>
   </div>
   <div class="hero-right">
-    <img 
-      src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85&fit=crop&crop=top" 
-      alt="Luxury beauty and glam"
-      loading="eager"
-    >
-    <div class="hero-img-label">Nairobi · Kenya</div>
+    <div class="hero-line"></div>
+    <div class="hero-img"></div>
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<div class="categories">
-  <a href="#services" class="cat-item">
-    <img 
-      src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80&fit=crop&crop=top" 
-      alt="Luxury Wigs"
-    >
-    <div class="cat-overlay">
-      <div class="cat-num">01</div>
-      <div class="cat-name">Luxury<br>Wigs</div>
-      <div class="cat-sub">100% Human Hair · Lace Installs</div>
-      <div class="cat-arrow">Shop Now →</div>
-    </div>
-  </a>
-  <a href="#services" class="cat-item">
-    <img 
-      src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=600&q=80&fit=crop&crop=top" 
-      alt="Makeup Artistry"
-    >
-    <div class="cat-overlay">
-      <div class="cat-num">02</div>
-      <div class="cat-name">Makeup<br>Artistry</div>
-      <div class="cat-sub">Flawless · Camera Ready</div>
-      <div class="cat-arrow">Book Now →</div>
-    </div>
-  </a>
-  <a href="#services" class="cat-item">
-    <img 
-      src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&fit=crop&crop=top" 
-      alt="Bridal Glam"
-    >
-    <div class="cat-overlay">
-      <div class="cat-num">03</div>
-      <div class="cat-name">Bridal<br>Glam</div>
-      <div class="cat-sub">Weddings · Trials · Bridal Parties</div>
-      <div class="cat-arrow">Inquire →</div>
-    </div>
-  </a>
-  <a href="#services" class="cat-item">
-    <img 
-      src="https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?w=600&q=80&fit=crop&crop=top" 
-      alt="Custom Units"
-    >
-    <div class="cat-overlay">
-      <div class="cat-num">04</div>
-      <div class="cat-name">Custom<br>Units</div>
-      <div class="cat-sub">Bespoke · Your Specs</div>
-      <div class="cat-arrow">Enquire →</div>
-    </div>
-  </a>
+<!-- ── MARQUEE ── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Luxury Wigs</span><span class="marquee-dot">✦</span>
+    <span>Bridal Glam</span><span class="marquee-dot">✦</span>
+    <span>Flawless Makeup</span><span class="marquee-dot">✦</span>
+    <span>Custom Units</span><span class="marquee-dot">✦</span>
+    <span>Hair Styling</span><span class="marquee-dot">✦</span>
+    <span>100% Human Hair</span><span class="marquee-dot">✦</span>
+    <span>Nairobi's Best</span><span class="marquee-dot">✦</span>
+    <span>Luxury Wigs</span><span class="marquee-dot">✦</span>
+    <span>Bridal Glam</span><span class="marquee-dot">✦</span>
+    <span>Flawless Makeup</span><span class="marquee-dot">✦</span>
+    <span>Custom Units</span><span class="marquee-dot">✦</span>
+    <span>Hair Styling</span><span class="marquee-dot">✦</span>
+    <span>100% Human Hair</span><span class="marquee-dot">✦</span>
+    <span>Nairobi's Best</span><span class="marquee-dot">✦</span>
+  </div>
 </div>
 
-<!-- ABOUT EDITORIAL -->
-<div class="editorial" id="about">
-  <div class="editorial-img">
-    <img 
-      src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=85&fit=crop&crop=top" 
-      alt="NK Beauty founder Cynthia Nduta"
-    >
+<!-- ══════════════════════════════════
+     ABOUT
+══════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="about-img-col">
+    <div class="about-main-img"></div>
+    <div class="about-gold-pill">Est. 2018</div>
+    <div class="about-accent-box"></div>
   </div>
-  <div class="editorial-text">
-    <div class="eyebrow reveal">The Story</div>
-    <h2 class="editorial-title reveal d1">
-      Born from Passion,<br>
-      Built on <em>Excellence</em>
-    </h2>
-    <blockquote class="pull-quote reveal d2">
+  <div class="about-text-col">
+    <div class="eyebrow reveal">Our Story</div>
+    <h2 class="h2 reveal delay1">Born from Passion,<br>Built on <em>Excellence</em></h2>
+    <blockquote class="reveal delay2">
       "Every woman deserves to feel like the most beautiful version of herself — and I make that happen."
     </blockquote>
-    <p class="editorial-body reveal d2">
-      NK Beauty is Nairobi's premier destination for luxury hair and beauty. Founded by Cynthia Nduta, the brand has grown from a passionate dream into one of the city's most sought-after beauty houses — specialising in premium human hair wigs, transformative makeup, and unforgettable bridal looks.
+    <p class="body-text reveal delay2">
+      NK Beauty — formerly Itsbodied by NK — is Nairobi's premier luxury beauty destination. Founded by Cynthia Nduta, a passionate beauty expert and entrepreneur, the brand has grown into one of Kenya's most celebrated beauty houses. From precision wig installations to breathtaking bridal transformations, every service is delivered with surgical artistry and an unwavering eye for perfection.
     </p>
-    <p class="editorial-body reveal d3">
-      Every service is delivered with surgical precision, artistic vision, and the understanding that beauty is not a luxury — it is a right.
+    <p class="body-text reveal delay3" style="margin-top:1rem">
+      Based in Nairobi, NK Beauty serves clients across Kenya who want more than a beauty appointment — they want an experience.
     </p>
-    <div class="founder-sig reveal d3">
-      <div class="founder-name">Cynthia Nduta</div>
-      <div class="founder-role">CEO & Lead Beauty Artist, NK Beauty</div>
-    </div>
-    <div class="editorial-cta reveal d3">
-      <a href="#contact" class="btn-dark">Book With Us</a>
+    <div class="signature reveal delay3">Cynthia Nduta</div>
+    <div class="signature-title reveal delay3">CEO & Lead Beauty Artist, NK Beauty</div>
+    <div style="margin-top:2rem" class="reveal delay3">
+      <a href="#services" class="btn-gold">Explore Services</a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- WIG EDITORIAL (reverse) -->
-<div class="editorial reverse">
-  <div class="editorial-text">
-    <div class="eyebrow reveal">Luxury Hair</div>
-    <h2 class="editorial-title reveal d1">
-      Hair That Moves<br>
-      <em>Exactly Like Yours</em>
-    </h2>
-    <p class="editorial-body reveal d2">
-      Our wigs are sourced from the finest human hair — full lace, frontal lace, and closure units. Every install is customised: bleached knots, plucked hairlines, styled and set for your face shape and lifestyle.
-    </p>
-    <p class="editorial-body reveal d3">
-      From bone-straight silk to voluminous curls, we carry every texture — and every single one looks like it grew from your scalp.
-    </p>
-    <div class="editorial-cta reveal d3">
-      <a href="#contact" class="btn-outline">Book a Wig Install</a>
-    </div>
-  </div>
-  <div class="editorial-img">
-    <img 
-      src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=85&fit=crop&crop=top" 
-      alt="Luxury human hair wig"
-    >
-  </div>
-</div>
+<div class="divline"></div>
 
-<!-- SERVICES -->
-<section class="services-section" id="services">
+<!-- ══════════════════════════════════
+     SERVICES
+══════════════════════════════════ -->
+<section class="services section" id="services">
   <div class="services-top">
-    <div class="services-top-text">
-      <div class="eyebrow reveal">What We Do</div>
-      <h2 class="services-heading reveal d1">Crafted Services,<br><em>Flawless</em> Results</h2>
+    <div>
+      <div class="eyebrow reveal">What We Offer</div>
+      <h2 class="h2 reveal delay1">Crafted Services,<br><em>Flawless</em> Results</h2>
     </div>
-    <a href="#contact" class="btn-outline" style="color:rgba(250,248,244,0.7);border-color:rgba(255,255,255,0.15);" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(250,248,244,0.7)'">Book Any Service</a>
+    <p class="body-text reveal" style="align-self:end">Every service is tailored to your face, your style, and your moment. No cookie-cutter looks — only bespoke artistry.</p>
   </div>
   <div class="services-grid">
-    <div class="svc-card reveal">
-      <div class="svc-num">01</div>
-      <h3 class="svc-title">Luxury Wig Installs</h3>
-      <p class="svc-desc">Full lace, frontal, and closure installs using 100% human hair. Bleached knots, plucked hairlines, styled and set to last.</p>
-      <a href="#contact" class="svc-link">Book This</a>
+
+    <div class="srv-card reveal">
+      <img class="srv-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&fit=crop" alt="Luxury wigs">
+      <div class="srv-name">Luxury Wig Install</div>
+      <p class="srv-desc">100% human hair frontal, closure & full lace units. Installed, bleached, styled and set to perfection. Long-lasting, natural-looking, unforgettable.</p>
+      <div class="srv-from">From <span>KSh 4,500</span></div>
+      <a href="#contact" class="srv-link">Book Now →</a>
+      <div class="srv-bottom-line"></div>
     </div>
-    <div class="svc-card reveal d1">
-      <div class="svc-num">02</div>
-      <h3 class="svc-title">Makeup Artistry</h3>
-      <p class="svc-desc">Everyday glam, photoshoot looks, evening events. Flawless, camera-ready, long-lasting — with premium professional products.</p>
-      <a href="#contact" class="svc-link">Book This</a>
+
+    <div class="srv-card reveal delay1">
+      <img class="srv-img" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80&fit=crop" alt="Makeup artistry">
+      <div class="srv-name">Makeup Artistry</div>
+      <p class="srv-desc">Camera-ready, long-lasting glam for every occasion — everyday looks, events, photoshoots, and red carpet moments. Premium professional products only.</p>
+      <div class="srv-from">From <span>KSh 3,500</span></div>
+      <a href="#contact" class="srv-link">Book Now →</a>
+      <div class="srv-bottom-line"></div>
     </div>
-    <div class="svc-card reveal d2">
-      <div class="svc-num">03</div>
-      <h3 class="svc-title">Bridal Glam</h3>
-      <p class="svc-desc">Full bridal packages including trials, day-of glam, and bridesmaid services. The most important day of your life — done perfectly.</p>
-      <a href="#contact" class="svc-link">Inquire</a>
+
+    <div class="srv-card reveal delay2">
+      <img class="srv-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&fit=crop" alt="Bridal glam">
+      <div class="srv-name">Bridal Glam</div>
+      <p class="srv-desc">Full bridal packages — trial, day-of makeup & hair, bridesmaid glam. Your wedding day is forever. Make every photograph legendary.</p>
+      <div class="srv-from">From <span>KSh 15,000</span></div>
+      <a href="#contact" class="srv-link">Inquire Now →</a>
+      <div class="srv-bottom-line"></div>
     </div>
-    <div class="svc-card reveal">
-      <div class="svc-num">04</div>
-      <h3 class="svc-title">Custom Wig Units</h3>
-      <p class="svc-desc">Bespoke units built to your specifications — density, length, colour, parting, and cap construction. Fully custom.</p>
-      <a href="#contact" class="svc-link">Order Custom</a>
+
+    <div class="srv-card reveal">
+      <img class="srv-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&fit=crop" alt="Custom wig units">
+      <div class="srv-name">Custom Wig Units</div>
+      <p class="srv-desc">Bespoke units made to your exact specifications — density, length, colour, cap construction. A wig that is unmistakably, uniquely yours.</p>
+      <div class="srv-from">From <span>KSh 8,000</span></div>
+      <a href="#contact" class="srv-link">Order Custom →</a>
+      <div class="srv-bottom-line"></div>
     </div>
-    <div class="svc-card reveal d1">
-      <div class="svc-num">05</div>
-      <h3 class="svc-title">Hair Styling</h3>
-      <p class="svc-desc">Blowouts, silk press, braids, and protective styles for natural and relaxed hair. Walk in, step out transformed.</p>
-      <a href="#contact" class="svc-link">Book This</a>
+
+    <div class="srv-card reveal delay1">
+      <img class="srv-img" src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80&fit=crop" alt="Hair styling">
+      <div class="srv-name">Hair Styling</div>
+      <p class="srv-desc">Silk press, blowouts, braids, protective styles and more. Whether natural or relaxed — walk in, step out transformed.</p>
+      <div class="srv-from">From <span>KSh 1,800</span></div>
+      <a href="#contact" class="srv-link">Book Now →</a>
+      <div class="srv-bottom-line"></div>
     </div>
-    <div class="svc-card reveal d2">
-      <div class="svc-num">06</div>
-      <h3 class="svc-title">Group & Event Glam</h3>
-      <p class="svc-desc">Photoshoots, corporate events, graduations, and group packages. Arrive flawlessly — together.</p>
-      <a href="#contact" class="svc-link">Book Group</a>
+
+    <div class="srv-card reveal delay2">
+      <img class="srv-img" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&q=80&fit=crop" alt="Group glam">
+      <div class="srv-name">Group & Event Glam</div>
+      <p class="srv-desc">Corporate events, graduations, photoshoots, girls' packages. Book NK Beauty for your entire team and arrive together — looking extraordinary.</p>
+      <div class="srv-from">From <span>KSh 3,000/pp</span></div>
+      <a href="#contact" class="srv-link">Get Quote →</a>
+      <div class="srv-bottom-line"></div>
     </div>
+
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-section" id="gallery">
-  <div class="gallery-top">
+<div class="divline"></div>
+
+<!-- ══════════════════════════════════
+     SHOP / ECOMMERCE
+══════════════════════════════════ -->
+<section class="shop section" id="shop">
+  <div class="shop-header">
     <div>
-      <div class="eyebrow reveal">The Work</div>
-      <h2 class="gallery-title reveal d1">Beauty in Every <em>Frame</em></h2>
+      <div class="eyebrow reveal">Online Store</div>
+      <h2 class="h2 reveal delay1">Shop <em>Our Collection</em></h2>
     </div>
-    <a href="#contact" class="btn-dark reveal d1">Book Your Look</a>
+    <a href="#contact" class="btn-outline reveal">View All Products</a>
+  </div>
+
+  <div class="shop-filters" id="filters">
+    <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+    <button class="filter-btn" onclick="filterProducts('wig',this)">Wigs</button>
+    <button class="filter-btn" onclick="filterProducts('makeup',this)">Makeup</button>
+    <button class="filter-btn" onclick="filterProducts('care',this)">Hair Care</button>
+    <button class="filter-btn" onclick="filterProducts('bridal',this)">Bridal</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <div class="product-card reveal" data-cat="wig">
+      <div class="product-img-wrap">
+        <span class="product-badge badge-hot">Best Seller</span>
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80&fit=crop&crop=top" alt="Bone Straight Frontal Wig">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('Bone Straight Frontal Wig','KSh 12,500','https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Frontal Wig</div>
+        <div class="product-name">Bone Straight Lace Frontal</div>
+        <div class="product-price"><span class="price-current">KSh 12,500</span></div>
+        <div class="product-stars"><span class="stars">★★★★★</span><span class="review-count">(48)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal delay1" data-cat="wig">
+      <div class="product-img-wrap">
+        <span class="product-badge badge-new">New</span>
+        <img src="https://images.unsplash.com/photo-1605980625601-0b02e6a8e601?w=500&q=80&fit=crop" alt="Body Wave Full Lace">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('Body Wave Full Lace Wig','KSh 16,000','https://images.unsplash.com/photo-1605980625601-0b02e6a8e601?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Full Lace Wig</div>
+        <div class="product-name">Body Wave Full Lace Unit</div>
+        <div class="product-price"><span class="price-current">KSh 16,000</span></div>
+        <div class="product-stars"><span class="stars">★★★★★</span><span class="review-count">(29)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal delay2" data-cat="wig">
+      <div class="product-img-wrap">
+        <span class="product-badge badge-sale">Sale</span>
+        <img src="https://images.unsplash.com/photo-1596649299486-4cdea56fd59d?w=500&q=80&fit=crop" alt="Deep Wave Closure Wig">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('Deep Wave Closure Wig','KSh 9,500','https://images.unsplash.com/photo-1596649299486-4cdea56fd59d?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Closure Wig</div>
+        <div class="product-name">Deep Wave Closure Unit</div>
+        <div class="product-price">
+          <span class="price-current">KSh 9,500</span>
+          <span class="price-old">KSh 13,000</span>
+          <span class="price-save">Save 27%</span>
+        </div>
+        <div class="product-stars"><span class="stars">★★★★☆</span><span class="review-count">(17)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal delay3" data-cat="makeup">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&q=80&fit=crop" alt="Pro Glam Kit">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('Pro Glam Starter Kit','KSh 7,200','https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Makeup Kit</div>
+        <div class="product-name">Pro Glam Starter Kit</div>
+        <div class="product-price"><span class="price-current">KSh 7,200</span></div>
+        <div class="product-stars"><span class="stars">★★★★★</span><span class="review-count">(34)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="care">
+      <div class="product-img-wrap">
+        <span class="product-badge badge-new">New</span>
+        <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&q=80&fit=crop" alt="NK Wig Care Bundle">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('NK Wig Care Bundle','KSh 3,800','https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Hair Care</div>
+        <div class="product-name">NK Signature Wig Care Bundle</div>
+        <div class="product-price"><span class="price-current">KSh 3,800</span></div>
+        <div class="product-stars"><span class="stars">★★★★★</span><span class="review-count">(61)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal delay1" data-cat="bridal">
+      <div class="product-img-wrap">
+        <span class="product-badge badge-hot">Popular</span>
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&q=80&fit=crop&crop=top" alt="Bridal Glam Voucher">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('Bridal Glam Voucher','KSh 25,000','https://images.unsplash.com/photo-1519741497674-611481863552?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Bridal Package</div>
+        <div class="product-name">Full Bridal Glam Voucher</div>
+        <div class="product-price"><span class="price-current">KSh 25,000</span></div>
+        <div class="product-stars"><span class="stars">★★★★★</span><span class="review-count">(22)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal delay2" data-cat="wig">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?w=500&q=80&fit=crop" alt="Kinky Curly Wig">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('Kinky Curly Frontal Wig','KSh 11,000','https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Frontal Wig</div>
+        <div class="product-name">Kinky Curly 4x4 Frontal</div>
+        <div class="product-price"><span class="price-current">KSh 11,000</span></div>
+        <div class="product-stars"><span class="stars">★★★★☆</span><span class="review-count">(14)</span></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal delay3" data-cat="makeup">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&q=80&fit=crop" alt="Luxury Lash Set">
+        <div class="product-quick">
+          <button class="quick-btn" onclick="addToCart('NK Luxury Lash Set','KSh 1,200','https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=120&q=80&fit=crop')">Add to Cart</button>
+          <button class="quick-wish" title="Wishlist">♡</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Lashes</div>
+        <div class="product-name">NK Luxury Strip Lash Set</div>
+        <div class="product-price"><span class="price-current">KSh 1,200</span></div>
+        <div class="product-stars"><span class="stars">★★★★★</span><span class="review-count">(88)</span></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="shop-more">
+    <a href="#contact" class="btn-outline">View Full Collection →</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PROMO SPLIT BANNER
+══════════════════════════════════ -->
+<div class="promo-split">
+  <div class="promo-panel">
+    <div class="promo-bg" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=85&fit=crop')"></div>
+    <div class="promo-overlay" style="background:rgba(8,8,8,0.55)"></div>
+    <div class="promo-content">
+      <div class="promo-tag">New Collection</div>
+      <h3 class="promo-h">Custom Wigs,<br><em>Your Vision</em></h3>
+      <a href="#contact" class="btn-gold">Order Custom Unit</a>
+    </div>
+  </div>
+  <div class="promo-panel">
+    <div class="promo-bg" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=85&fit=crop')"></div>
+    <div class="promo-overlay" style="background:rgba(8,8,8,0.55)"></div>
+    <div class="promo-content">
+      <div class="promo-tag">Bridal Season 2025</div>
+      <h3 class="promo-h">Bridal Glam<br><em>Packages</em></h3>
+      <a href="#pricing" class="btn-gold">See Packages</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GALLERY
+══════════════════════════════════ -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div class="eyebrow reveal">The Work</div>
+        <h2 class="h2 reveal delay1">Beauty in Every <em>Frame</em></h2>
+      </div>
+      <a href="#" class="btn-outline reveal" style="margin-bottom:0.4rem">Follow @itsbodiedbynk</a>
+    </div>
   </div>
   <div class="gallery-grid">
-    <div class="g-cell">
-      <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=900&q=80&fit=crop&crop=top" alt="Glam makeup look">
-      <div class="g-label">Full Glam</div>
+    <div class="g-cell"><img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?w=700&q=85&fit=crop" alt="Gallery 1"><div class="g-tag">Bridal Glam</div></div>
+    <div class="g-cell"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=85&fit=crop" alt="Gallery 2"><div class="g-tag">Wig Install</div></div>
+    <div class="g-cell"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&q=85&fit=crop" alt="Gallery 3"><div class="g-tag">Makeup Artistry</div></div>
+    <div class="g-cell"><img src="https://images.unsplash.com/photo-1596649299486-4cdea56fd59d?w=500&q=85&fit=crop" alt="Gallery 4"><div class="g-tag">Custom Unit</div></div>
+    <div class="g-cell"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&q=85&fit=crop" alt="Gallery 5"><div class="g-tag">Hair Styling</div></div>
+  </div>
+</section>
+
+<div class="divline"></div>
+
+<!-- ══════════════════════════════════
+     WHY NK BEAUTY
+══════════════════════════════════ -->
+<section class="why section-sm">
+  <div class="eyebrow">Why NK Beauty</div>
+  <h2 class="h2">The NK <em>Difference</em></h2>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <div class="why-title">100% Human Hair</div>
+      <div class="why-desc">All wigs and extensions use premium human hair — Remy and raw bundles sourced with quality control.</div>
     </div>
-    <div class="g-cell">
-      <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80&fit=crop&crop=top" alt="Wig install">
-      <div class="g-label">Wig Install</div>
+    <div class="why-card reveal delay1">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+      <div class="why-title">Bespoke Artistry</div>
+      <div class="why-desc">Every look is designed for your unique face, bone structure, skin tone, and personal style. Never generic.</div>
     </div>
-    <div class="g-cell">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&fit=crop&crop=top" alt="Bridal glam">
-      <div class="g-label">Bridal</div>
+    <div class="why-card reveal delay2">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="why-title">M-Pesa Payments</div>
+      <div class="why-desc">Pay seamlessly via M-Pesa, card, or bank transfer. Safe, simple, and fully Kenyan-market-friendly.</div>
     </div>
-    <div class="g-cell">
-      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80&fit=crop" alt="Luxury hair">
-      <div class="g-label">Luxury Hair</div>
-    </div>
-    <div class="g-cell">
-      <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80&fit=crop&crop=top" alt="Editorial makeup">
-      <div class="g-label">Editorial</div>
+    <div class="why-card reveal delay3">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="why-title">Nairobi Delivery</div>
+      <div class="why-desc">Same-day and next-day delivery across Nairobi for all products. Free delivery on orders over KSh 5,000.</div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="gold">NK Beauty</span>
-    <span>· Luxury Hair & Glam ·</span>
-    <span class="gold">Nairobi, Kenya</span>
-    <span>· Est. 2018 ·</span>
-    <span class="gold">Bridal Specialists</span>
-    <span>· 100% Human Hair ·</span>
-    <span class="gold">Made for You ·</span>
-    <span>NK Beauty</span>
-    <span>· Luxury Hair & Glam ·</span>
-    <span class="gold">Nairobi, Kenya</span>
-    <span>· Est. 2018 ·</span>
-    <span class="gold">Bridal Specialists</span>
-    <span>· 100% Human Hair ·</span>
-    <span class="gold">Made for You ·</span>
-  </div>
-</div>
-
-<!-- BRIDAL EDITORIAL -->
-<div class="editorial">
-  <div class="editorial-img">
-    <img 
-      src="https://images.unsplash.com/photo-1525328437458-0c4d4db7cab4?w=800&q=85&fit=crop&crop=top" 
-      alt="Bridal beauty"
-    >
-  </div>
-  <div class="editorial-text">
-    <div class="eyebrow reveal">Bridal Glam</div>
-    <h2 class="editorial-title reveal d1">
-      Your Most<br>
-      <em>Radiant Day</em>
-    </h2>
-    <p class="editorial-body reveal d2">
-      Your wedding day is not the time for experiments. Our bridal suite begins weeks before with a full trial — we learn your face, your preferences, and your vision. On the day, we arrive ready.
-    </p>
-    <p class="editorial-body reveal d3">
-      Full bridal packages include a bespoke wig unit, day-of makeup and hair, up to 3 bridesmaid slots, and an all-day touch-up kit. Because this moment belongs to you.
-    </p>
-    <div class="editorial-cta reveal d3">
-      <a href="#contact" class="btn-dark">Enquire About Bridal</a>
-    </div>
-  </div>
-</div>
-
-<!-- PRESS -->
-<div class="press-section">
-  <div class="press-inner">
-    <span class="press-label">As Featured In</span>
-    <div class="press-logos">
-      <span class="press-logo">Vogue Africa</span>
-      <span class="press-logo">Nairobi Fashion Week</span>
-      <span class="press-logo">Pulse Kenya</span>
-      <span class="press-logo">True Love East Africa</span>
-      <span class="press-logo">Y254</span>
-    </div>
-  </div>
-</div>
-
-<!-- PRICING -->
-<section class="pricing-section" id="pricing">
-  <div class="pricing-header">
-    <div class="eyebrow reveal">Investment</div>
-    <h2 class="pricing-main-title reveal d1">Transparent <em>Pricing</em></h2>
-    <p class="pricing-sub reveal d2">Premium beauty without surprises. Every package is clear, honest, and worth every shilling.</p>
-  </div>
-  <div class="pricing-cards">
-    <div class="p-card reveal">
-      <div class="p-tier">Essential</div>
-      <div class="p-name">Everyday Glam</div>
-      <div class="p-price"><span class="p-currency">KSh</span>3,500<span class="p-period">/ session</span></div>
-      <div class="p-divider"></div>
-      <ul class="p-features">
-        <li>Full face makeup look</li>
-        <li>Skin prep & foundation match</li>
-        <li>Lashes included</li>
-        <li>Up to 2 hrs session</li>
-        <li>1 round of touch-ups</li>
-      </ul>
-      <a href="#contact" class="p-btn p-btn-outline">Book Everyday Glam</a>
-    </div>
-    <div class="p-card featured reveal d1">
-      <div class="p-badge">Most Requested</div>
-      <div class="p-tier">Signature</div>
-      <div class="p-name">Full Luxury Package</div>
-      <div class="p-price"><span class="p-currency">KSh</span>8,500<span class="p-period">/ session</span></div>
-      <div class="p-divider"></div>
-      <ul class="p-features">
-        <li>Premium wig install (frontal / closure)</li>
-        <li>Full glam makeup look</li>
-        <li>Skin prep, contour & highlight</li>
-        <li>Lashes + brow definition</li>
-        <li>Up to 4 hrs — no rush</li>
-        <li>Professional finish photos</li>
-      </ul>
-      <a href="#contact" class="p-btn p-btn-filled">Book Signature</a>
-    </div>
-    <div class="p-card reveal d2">
-      <div class="p-tier">Bridal</div>
-      <div class="p-name">Bridal Suite</div>
-      <div class="p-price"><span class="p-currency">KSh</span>25,000<span class="p-period">/ wedding</span></div>
-      <div class="p-divider"></div>
-      <ul class="p-features">
-        <li>Bridal trial session</li>
-        <li>Day-of bridal makeup & hair</li>
-        <li>Up to 3 bridesmaids</li>
-        <li>Custom wig unit for bride</li>
-        <li>All-day touch-up kit</li>
-        <li>Priority scheduling & planning</li>
-      </ul>
-      <a href="#contact" class="p-btn p-btn-outline">Inquire About Bridal</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testi-section" id="testimonials">
-  <div class="testi-header">
-    <div class="eyebrow">Client Love</div>
-    <h2 class="testi-main-title">What They <em>Say</em></h2>
+<!-- ══════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════ -->
+<section class="testi section" id="testimonials">
+  <div class="testi-bg-word">NK</div>
+  <div class="testi-head">
+    <div class="eyebrow center">Client Love</div>
+    <h2 class="h2" style="text-align:center">What They <em>Say</em></h2>
   </div>
   <div class="testi-grid">
     <div class="t-card reveal">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"Cynthia is an absolute genius with wigs. My frontal looked so natural my own mum didn't believe it wasn't my hair. NK Beauty is the real deal."</p>
-      <div class="t-author">
-        <div class="t-avatar">A</div>
-        <div><div class="t-name">Amina W.</div><div class="t-loc">Westlands, Nairobi</div></div>
-      </div>
+      <p class="t-body">"Cynthia is an absolute genius with wigs. My frontal looked so natural my own mother didn't believe it wasn't my real hair. NK Beauty is the real deal."</p>
+      <div class="t-author"><div class="t-avi">A</div><div><div class="t-name">Amina W.</div><div class="t-loc">Westlands, Nairobi</div></div></div>
     </div>
-    <div class="t-card reveal d1">
+    <div class="t-card reveal delay1">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"I was a nervous bride — NK Beauty completely settled my nerves. The makeup lasted the entire day and I looked flawless in every single photo."</p>
-      <div class="t-author">
-        <div class="t-avatar">F</div>
-        <div><div class="t-name">Faith K.</div><div class="t-loc">Nairobi Bride, 2024</div></div>
-      </div>
+      <p class="t-body">"I was a nervous bride — NK Beauty completely settled my nerves. The makeup lasted the entire day and I looked flawless in every single photograph."</p>
+      <div class="t-author"><div class="t-avi">F</div><div><div class="t-name">Faith K.</div><div class="t-loc">Nairobi Bride, 2024</div></div></div>
     </div>
-    <div class="t-card reveal d2">
+    <div class="t-card reveal delay2">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"I've been coming to NK for two years and she never misses. The wig customisation is unreal — she knew exactly what I wanted before I could even describe it."</p>
-      <div class="t-author">
-        <div class="t-avatar">N</div>
-        <div><div class="t-name">Natasha M.</div><div class="t-loc">Karen, Nairobi</div></div>
-      </div>
+      <p class="t-body">"I've been a client for two years and she never misses. The custom wig customisation is unreal — she knew exactly what I wanted before I could even describe it."</p>
+      <div class="t-author"><div class="t-avi">N</div><div><div class="t-name">Natasha M.</div><div class="t-loc">Karen, Nairobi</div></div></div>
     </div>
     <div class="t-card reveal">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"Our whole group got glammed up before our graduation shoot. Everyone looked incredible — it felt like a magazine shoot. 10/10, booking again."</p>
-      <div class="t-author">
-        <div class="t-avatar">G</div>
-        <div><div class="t-name">Grace O.</div><div class="t-loc">Kilimani, Nairobi</div></div>
-      </div>
+      <p class="t-body">"Our whole group got glammed up before our graduation shoot. Everyone looked incredible — it genuinely felt like a Vogue shoot. Already planning our next group booking."</p>
+      <div class="t-author"><div class="t-avi">G</div><div><div class="t-name">Grace O.</div><div class="t-loc">Kilimani, Nairobi</div></div></div>
     </div>
-    <div class="t-card reveal d1">
+    <div class="t-card reveal delay1">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"The bone straight wig she installed is everything. Perfect density, perfect colour match, installed so neatly. I get compliments every single day."</p>
-      <div class="t-author">
-        <div class="t-avatar">S</div>
-        <div><div class="t-name">Sharon R.</div><div class="t-loc">Lavington, Nairobi</div></div>
-      </div>
+      <p class="t-body">"The bone straight wig she installed for me is everything. Perfect density, flawless colour match, and installed so neatly. I've received compliments every single day since."</p>
+      <div class="t-author"><div class="t-avi">S</div><div><div class="t-name">Sharon R.</div><div class="t-loc">Lavington, Nairobi</div></div></div>
     </div>
-    <div class="t-card reveal d2">
+    <div class="t-card reveal delay2">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"Cynthia's attention to detail is next level. She takes the time to understand your face structure before touching a brush. Truly a professional artist."</p>
-      <div class="t-author">
-        <div class="t-avatar">P</div>
-        <div><div class="t-name">Purity N.</div><div class="t-loc">Ruaka, Nairobi</div></div>
-      </div>
+      <p class="t-body">"Cynthia's attention to detail is genuinely next level. She studies your face before touching a brush. Truly a professional artist. Best money I've ever spent on myself."</p>
+      <div class="t-author"><div class="t-avi">P</div><div><div class="t-name">Purity N.</div><div class="t-loc">Ruaka, Nairobi</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- BOOKING / CONTACT -->
-<section class="booking-section" id="contact">
-  <div class="booking-img">
-    <img 
-      src="https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?w=900&q=85&fit=crop&crop=top" 
-      alt="NK Beauty studio"
-    >
-    <div class="booking-img-overlay"></div>
-  </div>
-  <div class="booking-form-side">
-    <div class="eyebrow reveal">Reserve Your Date</div>
-    <h2 class="form-section-title reveal d1">
-      Ready to Look<br><em>Unforgettable?</em>
-    </h2>
-    <p class="form-desc reveal d2">Book online or reach out directly. We're based in Nairobi and take clients by appointment.</p>
+<div class="divline"></div>
 
-    <div class="form-row">
-      <div class="f-group">
-        <label class="f-label">First Name</label>
-        <input type="text" class="f-input" placeholder="Your first name">
+<!-- ══════════════════════════════════
+     PRICING
+══════════════════════════════════ -->
+<section class="pricing section" id="pricing">
+  <div class="pricing-head">
+    <div class="eyebrow center">Packages</div>
+    <h2 class="h2" style="text-align:center">Transparent <em>Pricing</em></h2>
+    <p class="body-text" style="text-align:center;margin-top:0.8rem">Premium beauty, clear pricing. No hidden costs — just exceptional results.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="p-card reveal">
+      <div class="p-tier">Essential</div>
+      <div class="p-name">Everyday Glam</div>
+      <div class="p-amount"><span class="p-cur">KSh</span> 3,500 <span class="p-per">/ session</span></div>
+      <div class="p-hr"></div>
+      <ul class="p-list">
+        <li>Full face makeup look</li>
+        <li>Skin prep & foundation match</li>
+        <li>Lashes included</li>
+        <li>Up to 2 hours</li>
+        <li>Touch-up kit</li>
+      </ul>
+      <a href="#contact" class="p-btn p-btn-o">Book Everyday Glam</a>
+    </div>
+    <div class="p-card feat reveal delay1">
+      <div class="p-badge">Most Requested</div>
+      <div class="p-tier">Signature</div>
+      <div class="p-name">Full Luxury</div>
+      <div class="p-amount"><span class="p-cur">KSh</span> 8,500 <span class="p-per">/ session</span></div>
+      <div class="p-hr"></div>
+      <ul class="p-list">
+        <li>Premium wig install (frontal/closure)</li>
+        <li>Full glam makeup</li>
+        <li>Skin prep, contour & highlight</li>
+        <li>Lashes & brow definition</li>
+        <li>Up to 4 hrs — no rush</li>
+        <li>Professional finish photos</li>
+      </ul>
+      <a href="#contact" class="p-btn p-btn-f">Book Signature</a>
+    </div>
+    <div class="p-card reveal delay2">
+      <div class="p-tier">Bridal</div>
+      <div class="p-name">Bridal Suite</div>
+      <div class="p-amount"><span class="p-cur">KSh</span> 25,000 <span class="p-per">/ wedding</span></div>
+      <div class="p-hr"></div>
+      <ul class="p-list">
+        <li>Bridal trial session</li>
+        <li>Day-of bridal makeup & hair</li>
+        <li>Up to 3 bridesmaids included</li>
+        <li>Custom wig unit for bride</li>
+        <li>All-day touch-up kit</li>
+        <li>Priority planning & scheduling</li>
+      </ul>
+      <a href="#contact" class="p-btn p-btn-o">Inquire About Bridal</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     INSTAGRAM FEED
+══════════════════════════════════ -->
+<section class="igfeed">
+  <div class="igfeed-head">
+    <div>
+      <div class="eyebrow reveal">Instagram</div>
+      <h2 class="h2 reveal delay1" style="font-size:2rem">@<em>itsbodiedbynk</em></h2>
+    </div>
+    <a href="https://instagram.com/itsbodiedbynk" target="_blank" class="btn-outline reveal">Follow Us</a>
+  </div>
+  <div class="ig-grid">
+    <div class="ig-cell"><img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?w=300&q=80&fit=crop" alt="Instagram post 1"><div class="ig-hover">View Post</div></div>
+    <div class="ig-cell"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=80&fit=crop&crop=top" alt="Instagram post 2"><div class="ig-hover">View Post</div></div>
+    <div class="ig-cell"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=300&q=80&fit=crop" alt="Instagram post 3"><div class="ig-hover">View Post</div></div>
+    <div class="ig-cell"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=80&fit=crop" alt="Instagram post 4"><div class="ig-hover">View Post</div></div>
+    <div class="ig-cell"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=300&q=80&fit=crop" alt="Instagram post 5"><div class="ig-hover">View Post</div></div>
+    <div class="ig-cell"><img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=300&q=80&fit=crop" alt="Instagram post 6"><div class="ig-hover">View Post</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     BOOKING / CONTACT
+══════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <div class="eyebrow">Let's Connect</div>
+    <h2 class="h2" style="margin-bottom:1.2rem">Ready to Look<br><em>Unforgettable?</em></h2>
+    <p class="body-text">Book your session, order a wig, or just say hello. We're here, we're fast, and we respond on WhatsApp.</p>
+    <div class="c-list">
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.82 19.79 19.79 0 01.07 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/></svg></div>
+        <div><div class="c-lbl">WhatsApp & Call</div><div class="c-val">+254 700 000 000</div></div>
       </div>
-      <div class="f-group">
-        <label class="f-label">Last Name</label>
-        <input type="text" class="f-input" placeholder="Your last name">
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><div class="c-lbl">Email</div><div class="c-val">hello@nkbeauty.co.ke</div></div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="c-lbl">Studio</div><div class="c-val">Nairobi, Kenya — by appointment</div></div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="c-lbl">Hours</div><div class="c-val">Mon – Sat: 8:00 AM – 7:00 PM</div></div>
       </div>
     </div>
-    <div class="f-group">
-      <label class="f-label">Phone / WhatsApp</label>
-      <input type="tel" class="f-input" placeholder="+254 7XX XXX XXX">
+    <div class="socials">
+      <a href="https://instagram.com/itsbodiedbynk" target="_blank" class="s-btn" title="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a href="#" class="s-btn" title="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+      </a>
+      <a href="#" class="s-btn" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://wa.me/254700000000" target="_blank" class="s-btn" title="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      </a>
     </div>
+  </div>
+
+  <div class="contact-right">
+    <div class="eyebrow reveal">Book a Session</div>
+    <h3 class="form-title reveal delay1">Reserve Your<br>Appointment</h3>
+    <div class="f-row">
+      <div class="f-group"><label class="f-lbl">First Name</label><input class="f-in" type="text" placeholder="Cynthia"></div>
+      <div class="f-group"><label class="f-lbl">Last Name</label><input class="f-in" type="text" placeholder="Nduta"></div>
+    </div>
+    <div class="f-group"><label class="f-lbl">Phone / WhatsApp</label><input class="f-in" type="tel" placeholder="+254 7XX XXX XXX"></div>
+    <div class="f-group"><label class="f-lbl">Email</label><input class="f-in" type="email" placeholder="you@email.com"></div>
     <div class="f-group">
-      <label class="f-label">Service Requested</label>
-      <select class="f-select">
+      <label class="f-lbl">Service</label>
+      <select class="f-sel">
         <option value="" disabled selected>Select a service...</option>
-        <option>Luxury Wig Install</option>
-        <option>Full Glam Makeup</option>
-        <option>Bridal Package</option>
-        <option>Custom Wig Unit</option>
-        <option>Hair Styling</option>
-        <option>Group / Event Glam</option>
+        <option>Luxury Wig Install — from KSh 4,500</option>
+        <option>Full Glam Makeup — from KSh 3,500</option>
+        <option>Bridal Package — from KSh 15,000</option>
+        <option>Custom Wig Unit — from KSh 8,000</option>
+        <option>Hair Styling — from KSh 1,800</option>
+        <option>Group / Event Glam — from KSh 3,000/pp</option>
+        <option>Shop Order / Product Enquiry</option>
       </select>
     </div>
-    <div class="f-group">
-      <label class="f-label">Preferred Date</label>
-      <input type="date" class="f-input">
+    <div class="f-row">
+      <div class="f-group"><label class="f-lbl">Preferred Date</label><input class="f-in" type="date" style="color-scheme:dark"></div>
+      <div class="f-group"><label class="f-lbl">Preferred Time</label>
+        <select class="f-sel">
+          <option value="" disabled selected>Choose time...</option>
+          <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option>
+          <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
+          <option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option>
+          <option>5:00 PM</option>
+        </select>
+      </div>
     </div>
-    <div class="f-group">
-      <label class="f-label">Tell Us More (Optional)</label>
-      <textarea class="f-textarea" placeholder="Share any details about the look you want, your event, or any questions..."></textarea>
-    </div>
-    <button class="f-submit" onclick="handleBook(this)">Send Booking Request →</button>
-
-    <div class="contact-chips">
-      <div class="chip">📱 +254 700 000 000</div>
-      <div class="chip">📍 Nairobi, by appointment</div>
-      <div class="chip">📸 @itsbodiedbynk</div>
-    </div>
+    <div class="f-group"><label class="f-lbl">Additional Notes</label><textarea class="f-ta" placeholder="Tell us about your event, the look you want, or any questions..."></textarea></div>
+    <button class="f-submit" id="formSubmit" onclick="submitBooking()">Send Booking Request →</button>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
 <footer>
   <div class="footer-grid">
-    <div>
-      <a href="#" class="footer-logo">NK <span>Beauty</span></a>
-      <p class="footer-tagline">Nairobi's luxury beauty house. Precision wigs, flawless makeup, and bridal artistry that make every woman feel iconic.</p>
-      <div class="footer-socials">
-        <a href="#" title="Instagram">IG</a>
-        <a href="#" title="TikTok">TK</a>
-        <a href="#" title="Facebook">FB</a>
-        <a href="#" title="WhatsApp">WA</a>
+    <div class="f-brand">
+      <a href="#" class="nav-logo">NK <span>Beauty</span></a>
+      <p class="f-tagline">Nairobi's luxury beauty house. Precision wig installs, flawless makeup, and bridal artistry that make every woman feel iconic.</p>
+      <div class="f-social">
+        <a href="https://instagram.com/itsbodiedbynk" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" title="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+        <a href="#" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://wa.me/254700000000" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
       </div>
     </div>
     <div>
-      <div class="footer-col-head">Services</div>
-      <ul class="footer-links">
-        <li><a href="#services">Luxury Wigs</a></li>
+      <div class="f-col-title">Services</div>
+      <ul class="f-links">
+        <li><a href="#services">Luxury Wig Install</a></li>
         <li><a href="#services">Makeup Artistry</a></li>
         <li><a href="#services">Bridal Glam</a></li>
         <li><a href="#services">Custom Units</a></li>
@@ -1611,54 +1406,176 @@ footer {
       </ul>
     </div>
     <div>
-      <div class="footer-col-head">Studio</div>
-      <ul class="footer-links">
-        <li><a href="#about">About NK</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#contact">Book Now</a></li>
+      <div class="f-col-title">Shop</div>
+      <ul class="f-links">
+        <li><a href="#shop">Lace Frontals</a></li>
+        <li><a href="#shop">Closure Wigs</a></li>
+        <li><a href="#shop">Makeup Kits</a></li>
+        <li><a href="#shop">Wig Care</a></li>
+        <li><a href="#shop">Bridal Packages</a></li>
+        <li><a href="#shop">Gift Vouchers</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-head">Connect</div>
-      <ul class="footer-links">
-        <li><a href="#">@itsbodiedbynk</a></li>
-        <li><a href="#">WhatsApp Us</a></li>
-        <li><a href="#">Nairobi, Kenya</a></li>
-        <li><a href="#">Mon–Sat: 8am–7pm</a></li>
+      <div class="f-col-title">Info</div>
+      <ul class="f-links">
+        <li><a href="#about">About Cynthia</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Book Now</a></li>
+        <li><a href="#">Delivery Info</a></li>
+        <li><a href="#">Returns Policy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 NK Beauty by Cynthia Nduta. All rights reserved.</p>
-    <div class="footer-legal">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
+    <p class="f-copy">© 2025 NK Beauty by Cynthia Nduta. All rights reserved. Nairobi, Kenya.</p>
+    <div class="f-payments">
+      <span class="pay-pill">M-Pesa</span>
+      <span class="pay-pill">Visa</span>
+      <span class="pay-pill">Mastercard</span>
+    </div>
+    <div class="f-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
     </div>
   </div>
 </footer>
 
+<!-- ══════════════════════════════════
+     CART DRAWER
+══════════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <div class="cart-head-title">Your Bag (<span id="cartItemCount">0</span>)</div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <div class="cart-empty-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+      <p>Your bag is empty.<br>Add something beautiful.</p>
+      <a href="#shop" class="btn-gold" onclick="closeCart()" style="margin-top:0.5rem;font-size:0.6rem;padding:0.8rem 1.5rem">Shop Now</a>
+    </div>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-subtotal">
+      <span class="cart-sub-lbl">Subtotal</span>
+      <span class="cart-sub-val" id="cartTotal">KSh 0</span>
+    </div>
+    <p class="cart-note">Shipping calculated at checkout. M-Pesa, Visa & Mastercard accepted.</p>
+    <a href="#contact" class="cart-checkout" onclick="closeCart()">Proceed to Checkout →</a>
+  </div>
+</div>
+
 <script>
-  // Nav scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+// ── NAV ──
+const nav=document.getElementById('nav');
+const ann=document.getElementById('ann');
+let annH=ann?ann.offsetHeight:34;
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>annH){nav.classList.remove('has-ann');nav.style.top='0'}
+  else{nav.classList.add('has-ann');nav.style.top=annH+'px'}
+  nav.classList.toggle('scrolled',window.scrollY>80);
+});
 
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => obs.observe(el));
+// ── MOBILE MENU ──
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('burger').classList.toggle('open');
+}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 
-  // Form submit
-  function handleBook(btn) {
-    btn.textContent = 'Request sent! We\'ll contact you on WhatsApp ✓';
-    btn.style.background = '#B8922A';
-    btn.disabled = true;
+// ── CART STATE ──
+let cartItems=[];
+function openCart(){
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+}
+function closeCart(){
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+}
+function addToCart(name,price,img){
+  const existing=cartItems.find(i=>i.name===name);
+  if(existing){existing.qty++;} 
+  else{
+    const cat=name.includes('Wig')?'Wig':name.includes('Makeup')||name.includes('Lash')?'Makeup':name.includes('Bundle')||name.includes('Care')?'Hair Care':'Bridal';
+    cartItems.push({name,price,img,qty:1,cat});
   }
+  renderCart();
+  openCart();
+}
+function removeItem(idx){cartItems.splice(idx,1);renderCart()}
+function changeQty(idx,delta){
+  cartItems[idx].qty+=delta;
+  if(cartItems[idx].qty<1)cartItems.splice(idx,1);
+  renderCart();
+}
+function renderCart(){
+  const count=cartItems.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cartCount').textContent=count;
+  document.getElementById('cartItemCount').textContent=count;
+  const container=document.getElementById('cartItems');
+  const empty=document.getElementById('cartEmpty');
+  if(cartItems.length===0){
+    empty.style.display='flex';
+    const existing=container.querySelectorAll('.cart-item');
+    existing.forEach(e=>e.remove());
+    document.getElementById('cartTotal').textContent='KSh 0';
+    return;
+  }
+  empty.style.display='none';
+  container.querySelectorAll('.cart-item').forEach(e=>e.remove());
+  let total=0;
+  cartItems.forEach((item,idx)=>{
+    const numPrice=parseInt(item.price.replace(/[^0-9]/g,''));
+    total+=numPrice*item.qty;
+    const div=document.createElement('div');
+    div.className='cart-item';
+    div.innerHTML=`
+      <img class="cart-item-img" src="${item.img}" alt="${item.name}">
+      <div class="cart-item-info">
+        <div class="cart-item-cat">${item.cat}</div>
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${item.price}</div>
+        <div class="cart-qty">
+          <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+        </div>
+        <button class="cart-item-remove" onclick="removeItem(${idx})">Remove</button>
+      </div>`;
+    container.appendChild(div);
+  });
+  document.getElementById('cartTotal').textContent='KSh '+total.toLocaleString();
+}
+
+// ── FILTER ──
+function filterProducts(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card=>{
+    const c=card.dataset.cat;
+    card.style.display=(cat==='all'||c===cat)?'':'none';
+  });
+}
+
+// ── FORM ──
+function submitBooking(){
+  const btn=document.getElementById('formSubmit');
+  btn.textContent='Request Sent! We\'ll contact you shortly on WhatsApp ✓';
+  btn.style.background='#2d2d2d';
+  btn.style.color='#c9974a';
+  btn.disabled=true;
+}
+
+// ── REVEAL ──
+const reveals=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:0.1});
+reveals.forEach(el=>ro.observe(el));
 </script>
 </body>
 </html>
